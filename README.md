@@ -1,18 +1,18 @@
 # Hello there, I'm Dakshin S A 👋
 
-🚀 **Senior Software Developer** with 3+ years of experience in **C#/.NET**, **Go**, and **ReactJS**, specializing in building scalable enterprise applications and high-performance systems.  
+**Senior Software Developer** with 3+ years of experience in **C#/.NET**, **Java/Spring**, **Go**, and **ReactJS**, specializing in building scalable enterprise applications and high-performance systems.  
 
-💡 I love solving challenging problems, optimizing performance, and crafting clean, maintainable code that delivers real business value.
+I love solving challenging problems, optimizing performance, and crafting clean, maintainable code that delivers real business value.
 
 ---
 
 ## 🔹 About Me
 
-- 💻 Skilled in **Full-Stack Development** (Go, ReactJS, C#/.NET)
-- 📊 Experienced in **data analysis & performance optimization** using **Python**, **Pandas**, and **NumPy**
-- 🔄 Strong believer in **clean architecture**, **scalability**, and **reusable components**
-- 🌱 Currently upskilling in **AWS**, **Linux**, and **GitHub Actions**
-- 🏆 Awarded *Rookie of the Year 2024* at Applied Materials for outstanding performance
+- Skilled in **Full-Stack Development** (Go, ReactJS, C#/.NET)
+- Experienced in **data analysis & performance optimization** using **Python**, **Pandas**, and **NumPy**
+- Strong believer in **clean architecture**, **scalability**, and **reusable components**
+- Currently upskilling in **AWS**, **Linux**, and **GitHub Actions**
+- Awarded *Rookie of the Year 2024* at Applied Materials for outstanding performance
 
 ---
 

@@ -1,4 +1,4 @@
-# Hello there, I'm Dakshin S A 👋
+# Hello there, I'm Dakshin 👋
 
 **Senior Software Developer** with 3+ years of experience in **C#/.NET**, **Java/Spring**, **Go**, and **ReactJS**, specializing in building scalable enterprise applications and high-performance systems.  
 

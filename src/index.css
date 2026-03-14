@@ -1,9 +1,158 @@
 @import "tailwindcss";
 
+/*
+ * ── Palette ───────────────────────────────────────────────────────────────
+ * Change values here to retheme. Light mode is default; dark mode overrides
+ * via prefers-color-scheme. Zero component changes needed to switch themes.
+ *
+ * Accent presets:
+ *   sky-400:     oklch(0.746 0.16 232.661)
+ *   emerald-400: oklch(0.765 0.177 163.223)
+ *   violet-400:  oklch(0.702 0.183 293.541)
+ *   amber-400:   oklch(0.828 0.189 84.429)
+ *   cyan-400:    oklch(0.789 0.154 211.53)
+ *   rose-400:    oklch(0.712 0.194 13.428)
+ * ──────────────────────────────────────────────────────────────────────────
+ */
+
+:root {
+  --palette-accent: oklch(31.512% 0.10288 25.319);
+  /* emerald-400         */
+
+  /* Light mode — eggshell white + near-black */
+  --palette-base: oklch(0.97 0.008 80);
+  /* eggshell white      */
+  --palette-surface: oklch(0.93 0.008 80);
+  /* warm off-white card */
+  --palette-line: oklch(0.85 0.008 80);
+  /* warm grey border    */
+  --palette-primary: oklch(0.15 0.01 265);
+  /* near-black          */
+  --palette-body: oklch(0.28 0.015 265);
+  /* dark body text      */
+  --palette-dim: oklch(21.408% 0.00801 274.544);
+  /* secondary text      */
+  --palette-muted: oklch(21.408% 0.00801 274.544);
+  /* tertiary text       */
+  --palette-subtle: oklch(21.408% 0.00801 274.544);
+  /* badge text          */
+}
+
+html.dark {
+  /* Dark mode — dark grey + white */
+  --palette-accent: oklch(86.508% 0.26828 141.98);
+  --palette-base: oklch(13.979% 0.00002 271.152);
+  /* slate-900 */
+  --palette-surface: oklch(16.842% 0.00002 271.152);
+  /* slate-800 */
+  --palette-line: oklch(43.861% 0.00005 271.152);
+  /* slate-700 */
+  --palette-primary: oklch(0.968 0.007 247.896);
+  /* slate-100 */
+  --palette-body: oklch(100% 0.00011 271.152);
+  /* slate-200 */
+  --palette-dim: oklch(87.632% 0.01758 256.378);
+  /* slate-400 */
+  --palette-muted: oklch(100% 0.00011 271.152);
+  /* slate-500 */
+  --palette-subtle: oklch(100% 0.00011 271.152);
+  /* slate-300 */
+}
+
+/*
+ * Wire raw palette vars to Tailwind tokens.
+ * @theme inline keeps var() references live so they respond to the dark class.
+ */
+@theme inline {
+  --color-accent: var(--palette-accent);
+  --color-base: var(--palette-base);
+  --color-surface: var(--palette-surface);
+  --color-line: var(--palette-line);
+  --color-primary: var(--palette-primary);
+  --color-body: var(--palette-body);
+  --color-dim: var(--palette-dim);
+  --color-muted: var(--palette-muted);
+  --color-subtle: var(--palette-subtle);
+
+  /* Site-wide max content width — change here to resize all sections at once */
+  --width-content: 75rem;
+  /* 6xl = 1152px, was 4xl = 896px */
+
+  /*
+   * ── Typography ────────────────────────────────────────────────────────────
+   * Semantic font sizes. clamp() pairs replace responsive text-{n} sm:text-{n}
+   * breakpoint classes with a single fluid value.
+   *   label   — captions, badges, metadata          (text-xs  / 0.75rem)
+   *   ui      — nav, buttons, body descriptions     (text-sm  / 0.875rem)
+   *   heading — section headings                    (text-2xl / 1.5rem)
+   *   subtitle — hero subtitle, fluid 2xl→3xl
+   *   display  — hero h1, fluid 5xl→6xl
+   * ──────────────────────────────────────────────────────────────────────────
+   */
+  --text-label: 1rem;
+  --text-ui: 1rem;
+  --text-heading: 1.5rem;
+  --text-subtitle: 1.25rem;
+  --text-display: 1.5rem;
+  --text-name: 2.5rem;
+  --text-nav-header: 1.5rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+/* Only transition colors when the theme toggle fires — not on every hover */
+html.transitioning *,
+html.transitioning *::before,
+html.transitioning *::after {
+  transition: background-color 1s ease, color 1s ease, border-color 1s ease !important;
+}
+
 body {
-  @apply bg-slate-900 text-slate-200 font-sans antialiased;
+  @apply bg-base text-body font-sans antialiased;
+}
+
+@layer components {
+
+  /* Cards */
+  .card {
+    @apply bg-surface border border-line rounded-lg;
+  }
+
+  /* Badges */
+  .badge {
+    @apply text-label px-2 py-0.5 bg-accent/10 text-accent border border-accent/20 rounded;
+  }
+
+  .badge-skill {
+    @apply px-3 py-1 text-ui bg-surface text-subtle rounded border border-line;
+  }
+
+  /* Buttons — min-h-11 ensures 44px touch target on mobile */
+  .btn-outline {
+    @apply px-5 py-2.5 min-h-11 border border-accent text-accent rounded text-ui hover:bg-accent/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+  }
+
+  .btn-primary {
+    @apply px-5 py-2.5 min-h-11 bg-accent text-base rounded text-ui font-medium hover:brightness-110 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+  }
+
+  /* Bullets */
+  .bullet {
+    @apply text-ui text-dim flex gap-2;
+  }
+
+  .bullet-marker {
+    @apply text-accent mt-0.5 shrink-0;
+  }
+
+  /* Links — rounded-sm scopes the focus ring tightly around the text */
+  .link-dim {
+    @apply text-dim hover:text-accent transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent;
+  }
+
+  .link-faint {
+    @apply text-muted hover:text-accent transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent;
+  }
 }

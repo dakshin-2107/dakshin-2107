@@ -14,9 +14,9 @@ export default function App() {
         <section id="about">
           <Hero />
         </section>
-        <Skills />
         <Experience />
         <Projects />
+        <Skills />
         <Education />
       </main>
       <Footer />

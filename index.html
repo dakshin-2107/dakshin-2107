@@ -1,22 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <!-- Runs before paint to avoid flash of wrong theme -->
-    <script>
-      (function () {
-        var stored = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dakshin</title>
+  <!-- Runs before paint to avoid flash of wrong theme -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+      // GitHub Pages SPA: restore path stored by 404.html redirect
+      var redirect = sessionStorage.getItem('spa_redirect');
+      if (redirect) {
+        sessionStorage.removeItem('spa_redirect');
+        history.replaceState(null, '', '/Portfolio' + redirect);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

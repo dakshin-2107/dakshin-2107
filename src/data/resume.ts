@@ -13,7 +13,7 @@ const resume: ResumeData = {
   skills: {
     languages: ['Python', 'Java', 'Spring boot', 'GO', 'Typescript', 'Node.js', 'React'],
     infrastructure: ['PostgresSQL', 'MongoDB', 'Redis'],
-    aiml: ['LLMs(Claude,GPT-5,Gemini)', 'Claude Code', 'AI Agents', 'Agent Orchestration', 'RAG', 'MCP', 'Context Engineering', 'LangGraph'],
+    aiml: ['AI Agents', 'RAG', 'MCP', 'Context Engineering', 'LLMs(Claude,GPT-5,Gemini)', 'Claude Code',],
     other: ['AWS', 'Docker', 'CI/CD', 'Prometheus', 'Grafana'],
   },
   experience: [

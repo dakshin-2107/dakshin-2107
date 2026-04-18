@@ -33,16 +33,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-base/80 backdrop-blur border-b border-surface">
       <div className="max-w-[var(--width-content)] mx-auto px-6 py-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:h-14 sm:py-0 sm:gap-0">
-        {/* Row 1: name + theme toggle */}
-        <div className="flex items-center justify-between">
+        {/* Row 1: name */}
+        <div className="flex items-center">
           <Link to="/" className="text-accent font-semibold tracking-wide text-nav-header">Dakshin</Link>
-          <button
-            onClick={toggle}
-            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="sm:hidden text-dim hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
-          >
-            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-          </button>
         </div>
 
         {/* Row 2 on mobile: nav links + resume */}
@@ -65,11 +58,10 @@ export default function Navbar() {
               <a href="/Portfolio/Dakshin_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-ui link-dim">Resume</a>
             </li>
           </ul>
-          {/* Theme toggle visible only on sm+ */}
           <button
             onClick={toggle}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="hidden sm:block text-dim hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            className="text-dim hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>

@@ -27,7 +27,7 @@ function Portfolio() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Portfolio/">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/blog" element={<div className='w-full h-auto justify-center align-middle'><h1>Blogs page</h1></div>} />

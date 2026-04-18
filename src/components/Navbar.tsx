@@ -55,7 +55,7 @@ export default function Navbar() {
               <Link to="/blog" className="text-ui link-dim">Blog</Link>
             </li> */}
             <li>
-              <a href="/Portfolio/Dakshin_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-ui link-dim">Resume</a>
+              <a href="/Dakshin_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-ui link-dim">Resume</a>
             </li>
           </ul>
           <button

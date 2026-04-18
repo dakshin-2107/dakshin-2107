@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-base/80 backdrop-blur border-b border-surface">
-      <div className="max-w-[var(--width-content)] mx-auto px-6 py-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:h-14 sm:py-0 sm:gap-0">
+      <div className="max-w-[var(--width-content)] mx-auto px-6 pt-2 pb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:h-14 sm:pt-0 sm:pb-0 sm:gap-0">
         {/* Row 1: name */}
         <div className="flex items-center">
           <Link to="/" className="text-accent font-semibold tracking-wide text-nav-header">Dakshin</Link>

@@ -5,3 +5,6 @@ dist-ssr
 .env
 .claude
 .vscode
+
+CLAUDE.md
+.claude

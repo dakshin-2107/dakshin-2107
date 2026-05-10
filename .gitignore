@@ -8,3 +8,5 @@ dist-ssr
 
 CLAUDE.md
 .claude
+
+.DS_Store
